@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Strategic Product Placement Analysis</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+
+        <a class="navbar-brand" href="#home">
+            Strategic Product Placement
+        </a>
+
+        <div>
+            <a class="nav-link d-inline" href="#home">Home</a>
+            <a class="nav-link d-inline" href="#about">About</a>
+            <a class="nav-link d-inline" href="#dashboard">Dashboard</a>
+            <a class="nav-link d-inline" href="#story">Story</a>
+            <a class="nav-link d-inline" href="#contact">Contact</a>
+        </div>
+    </div>
+</nav>
+
+{% block content %}{% endblock %}
+
+<footer class="text-white text-center py-3">
+    © 2026 Bhavani | Strategic Product Placement Analysis  
+    <br>
+    <a href="https://github.com/yourusername" target="_blank" class="footer-link">
+        <i class="fab fa-github"></i> GitHub
+    </a>
+    |
+    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="footer-link">
+        <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+</footer>
+
+<script>
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.clientHeight;
+
+            if (pageYOffset >= sectionTop) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === "#" + current) {
+                link.classList.add("active");
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

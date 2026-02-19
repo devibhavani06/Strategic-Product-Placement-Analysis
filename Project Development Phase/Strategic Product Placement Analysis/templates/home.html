@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section id="home" class="section home-section text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Strategic Product Placement Analysis</h1>
+        <p class="lead mt-3">
+            A data analytics project using Tableau to evaluate how product placement
+            influences supermarket sales performance.
+        </p>
+    </div>
+</section>
+
+<section id="about" class="section">
+    <div class="container content-box">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h2 class="mb-4">
+                    Project Overview:
+                </h2>
+
+                <p>
+                    This project focuses on analyzing how strategic product placement 
+                    influences supermarket sales performance. By examining structured 
+                    retail sales data, the study aims to uncover patterns that impact 
+                    customer purchasing behavior and revenue generation.
+                </p>
+
+                <p>
+                    The analysis involves systematic data preprocessing including 
+                    cleaning, transformation, and organization of sales datasets 
+                    to ensure accuracy and reliability of results.
+                </p>
+
+                <p>
+                    Using <strong>Tableau dashboards and interactive stories</strong>, 
+                    the project visualizes sales trends, category performance, 
+                    seasonal demand variations, and promotional effects. 
+                    These insights support informed business decisions 
+                    and optimized product positioning strategies.
+                </p>
+
+                <p>
+                    The final analytical solution is integrated into a 
+                    Flask-based web interface for structured presentation 
+                    and professional deployment.
+                </p>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="{{ url_for('static', filename='images/img1.jpg') }}" 
+                     class="img-fluid rounded shadow"
+                     alt="Strategic Product Placement Analysis">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="dashboard" class="section">
+    <div class="container content-box">
+        <h2 class="mb-4">Interactive Dashboard</h2>
+
+        <div class="ratio ratio-16x9 shadow">
+            <iframe 
+                src="https://public.tableau.com/views/PRODUCTPLACEMENTANALYSIS-DASHBOARD/PRODUCTPLACEMENTANALYSIS-DASHBOARD?:embed=y&:display_count=yes&:showVizHome=no"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<section id="story" class="section">
+    <div class="container content-box">
+        <h2 class="mb-4">Tableau Story</h2>
+
+        <div class="ratio ratio-16x9 shadow">
+            <iframe 
+                src="https://public.tableau.com/views/Book1_17703996939070/Story?:embed=y&:display_count=yes&:showVizHome=no"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</section>
+
+
+<section id="contact" class="section">
+    <div class="container content-box">
+        <h2 class="mb-4">Contact Us</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }} mt-3">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+        <form method="POST" action="/">
+            <div class="mb-3">
+                <label class="form-label">Full Name</label>
+                <input type="text" name="name" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Email Address</label>
+                <input type="email" name="email" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Message</label>
+                <textarea name="message" rows="4" class="form-control" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

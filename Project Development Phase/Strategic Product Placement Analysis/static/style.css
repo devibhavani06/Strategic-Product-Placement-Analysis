@@ -1,0 +1,120 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding-top: 80px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0a0a0f;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.home-section {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url("/static/images/home_bg.jpg") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#about,
+#dashboard,
+#story,
+#contact {
+    background-color: #0a0a0f;
+}
+
+.navbar {
+    background: rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 22px;
+    color: #00c6ff !important;
+    letter-spacing: 1px;
+}
+
+.navbar-brand:hover {
+    color: #ffffff !important;
+}
+
+.nav-link {
+    margin-left: 18px;
+    color: #ffffff !important;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #00c6ff !important;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -6px;
+    background-color: #00c6ff;
+    transition: 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+.content-box {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.4);
+}
+
+iframe {
+    border-radius: 12px;
+    width: 100%;
+    border: none;
+}
+
+.ratio {
+    overflow: hidden;
+}
+
+footer {
+    background-color: #011b43;
+    padding: 15px 0;
+}
+
+@media (max-width: 768px) {
+    .content-box {
+        padding: 20px;
+    }
+}
+.footer-link {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #00c6ff;
+}
